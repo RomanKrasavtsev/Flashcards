@@ -1,0 +1,52 @@
+<% content_for :title, "Настройки" %>
+<div class="center mdl-card mdl-cell mdl-cell--5-col mdl-shadow--8dp" >
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div,
+      msg.html_safe,
+      class: "#{name} mdl-card__supporting-text meta meta--fill"
+    %>
+  <% end %>
+
+  <%= form_tag settings_path do |f| %>
+    <% if @profile.errors.any? %>
+      <% for message in @profile.errors.full_messages %>
+        <%= content_tag :div,
+          message,
+          class: "error mdl-card__supporting-text meta meta--fill"
+        %>
+      <% end %>
+    <% end %>
+
+    <div class="top">
+      <div class="original_text login">
+        <div class="group">
+          <%= text_field_tag :email, nil, required: true %>
+          <span class="bar"></span>
+          <%= label_tag :email, "Email" %>
+        </div>
+        <div class="group">
+          <%= password_field_tag :old_password, nil, required: true %>
+          <span class="bar"></span>
+          <%= label_tag :old_password, "Текущий пароль" %>
+        </div>
+        <div class="group">
+          <%= password_field_tag :password, nil, required: true %>
+          <span class="bar"></span>
+          <%= label_tag :password, "Новый пароль" %>
+        </div>
+        <div class="group">
+          <%= password_field_tag :password_confirmation, nil, required: true %>
+          <span class="bar"></span>
+          <%= label_tag :password_confirmation, "Повторите новый пароль" %>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-card__supporting-text meta meta--fill">
+      <div>
+        <button class="mdl-button mdl-js-button">
+          Изменить
+        </button>
+      </div>
+    </div>
+  <% end %>
+<end>
