@@ -18,7 +18,7 @@ class PasswordResetsController < ApplicationController
     # about which emails exist in the system.
     redirect_to(
       root_path,
-      notice: "Вам на почту была выслана инструкция по смене пароля"
+      notice: t(:password_tutorial)
     )
   end
 
@@ -47,7 +47,7 @@ class PasswordResetsController < ApplicationController
     @user.password_confirmation = params[:user][:password_confirmation]
     # the next line clears the temporary token and updates the password
     if @user.change_password!(params[:user][:password])
-      redirect_to(root_path, notice: "Пароль был успешно изменен.")
+      redirect_to(root_path, notice: t(:password_changed))
     else
       render action: "edit"
     end

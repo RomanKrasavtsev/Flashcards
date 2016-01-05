@@ -9,7 +9,7 @@ class LoginsController < ApplicationController
     if login(params[:email], params[:password])
       redirect_back_or_to root_path
     else
-      flash[:error] = "Неверный логин или пароль!"
+      flash[:error] = t(:login_failed)
       render :new
     end
   end
