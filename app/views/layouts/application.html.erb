@@ -14,7 +14,7 @@
 <div class="layout-transparent mdl-layout mdl-js-layout">
   <header class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row">
-      <%= link_to "DailyWords", root_path, class: "mdl-layout-title white-title" %>
+      <%= link_to "Flashcard", root_path, class: "mdl-layout-title white-title" %>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
         <% if current_user %>
@@ -33,7 +33,7 @@
   </header>
 
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">DailyWords</span>
+    <span class="mdl-layout-title">Flashcard</span>
     <nav class="mdl-navigation">
       <% if current_user %>
         <%= link_to "Все карточки", cards_path, class: "mdl-navigation__link" %>

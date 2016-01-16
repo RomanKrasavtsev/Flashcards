@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 20151116200205) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "original_text"
-    t.string   "transcription"
     t.string   "translated_text"
     t.date     "review_date"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "transcription"
     t.integer  "user_id",         null: false
   end
 
