@@ -5,7 +5,7 @@
         class: "error mdl-card__supporting-text meta meta--fill"
     %>
   <% end %>
-  <%= form_for card do |f| %>
+  <%= form_for card, html: { multipart: true } do |f| %>
     <div class="top">
       <div class="mdl-card__title meta">
         <div class="group">
@@ -39,6 +39,14 @@
           <%= f.label :transcription, "Транскрипция" %>
         </div>
       </div>
+      <div class="mdl-card__title meta">
+        <div class="group">
+          <%= f.file_field :image %>
+          <span class="bar"></span>
+          <%= f.label :image, "Изображение" %>
+        </div>
+      </div>
+      
     </div>
 
     <div class="bittom">

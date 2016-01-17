@@ -1,5 +1,6 @@
 class Card < ActiveRecord::Base
   belongs_to :users
+  mount_uploader :image, ImageUploader
 
   before_validation :ensure_review_date_has_a_value
   validates :original_text, :translated_text,

@@ -16,6 +16,7 @@
   <% end %>    
   <div class="top">
     <% if @card.present? %>
+      <%= image_tag @card.image if @card.image? %>
       <%= form_for :review, url: :reviews do |f| %>
         <%= f.hidden_field :card_id, value: @card.id %>
           <div class="mdl-card__title">

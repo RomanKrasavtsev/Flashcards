@@ -44,7 +44,8 @@ class CardsController < ApplicationController
       :review_date,
       :original_text,
       :translated_text,
-      :transcription
+      :transcription,
+      :image
     )
   end
 
